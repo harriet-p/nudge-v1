@@ -1,0 +1,144 @@
+.screen-layout {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  transition: background-color 1.5s ease;
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+}
+
+.screen-layout__frame {
+  position: relative;
+  width: min(100vw, var(--screen-width));
+  height: min(100dvh, var(--screen-height));
+  max-height: var(--screen-height);
+  background: var(--screen-bg);
+  overflow: hidden;
+  transition:
+    background-color 1.5s ease,
+    color 1.5s ease;
+}
+
+.screen-layout__dialogue-stack {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--character-top) - var(--dialogue-character-gap));
+  transform: translateY(-100%);
+  width: fit-content;
+  max-width: calc(var(--screen-width) - 32 * var(--pixel-scale) * 1px);
+  margin-inline: auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(12 * var(--pixel-scale) * 1px);
+}
+
+.screen-layout__dialogue {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--character-top) - var(--dialogue-character-gap));
+  transform: translateY(-100%);
+  width: fit-content;
+  max-width: calc(var(--screen-width) - 32 * var(--pixel-scale) * 1px);
+  margin-inline: auto;
+  z-index: 2;
+}
+
+.screen-layout__dialogue--in-stack {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+  margin: 0;
+}
+
+.screen-layout--instant-theme,
+.screen-layout--instant-theme .screen-layout__frame {
+  transition: none;
+}
+
+.screen-layout--dark {
+  background: #0d0d14;
+}
+
+.screen-layout--dark .screen-layout__frame {
+  --screen-bg: #1a1a2e;
+  --text-color: #d4d4dc;
+  --dialogue-border: #5a5670;
+  --btn-border: #8a8698;
+}
+
+.screen-layout__character {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--character-top);
+  display: flex;
+  justify-content: center;
+}
+
+.screen-layout__character--play-chase {
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.screen-layout__checklist {
+  position: absolute;
+  top: var(--button-stack-top);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(280 * var(--pixel-scale) * 1px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--button-stack-gap);
+}
+
+.screen-layout__actions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: clamp(
+    var(--button-stack-top),
+    var(--button-stack-top),
+    calc(100% - var(--button-display-height) - var(--frame-bottom-margin))
+  );
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--button-stack-gap);
+  overflow: visible;
+}
+
+.screen-layout__settings {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  opacity: 0.35;
+  cursor: pointer;
+}
+
+.screen-layout__settings::after {
+  content: '...';
+  font-family: var(--font-pixel);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--text-color);
+}

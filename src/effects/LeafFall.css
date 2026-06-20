@@ -1,0 +1,48 @@
+.leaf-fall {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  transform: translateX(calc(-12 * var(--pixel-scale) * 1px));
+}
+
+.leaf-fall__leaf {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  animation: leaf-fall-down ease-in forwards;
+}
+
+.leaf-fall__sprite {
+  display: block;
+  width: calc(50 * var(--pixel-scale) * 1px);
+  height: auto;
+}
+
+@keyframes leaf-fall-down {
+  0% {
+    transform: translate(0, 0) rotate(-18deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  82% {
+    opacity: 0.95;
+  }
+  94% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(
+      var(--leaf-drift, 0),
+      calc(
+        var(--leaf-fall-start-above-character) + var(--character-display-height) +
+          calc(32 * var(--pixel-scale) * 1px)
+      )
+    )
+      rotate(24deg);
+    opacity: 0;
+  }
+}

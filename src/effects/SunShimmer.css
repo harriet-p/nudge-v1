@@ -1,0 +1,50 @@
+.sun-shimmer {
+  position: absolute;
+  left: 50%;
+  top: calc(
+    var(--character-top) - var(--dialogue-character-gap) -
+      var(--speech-bubble-height) - var(--sun-shimmer-gap)
+  );
+  transform: translate(-50%, -100%);
+  line-height: 0;
+}
+
+.sun-shimmer__body {
+  opacity: 0;
+  animation: sun-shimmer-in var(--sun-shimmer-duration, 6000ms) ease-in-out
+    forwards;
+}
+
+.sun-shimmer__sprite {
+  display: block;
+  animation: sun-shimmer-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes sun-shimmer-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  88% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes sun-shimmer-pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-3 * var(--pixel-scale) * 1px));
+  }
+}

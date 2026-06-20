@@ -1,0 +1,30 @@
+.speech-bubble {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.speech-bubble__art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.speech-bubble__text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-pixel);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--text-color);
+  text-align: center;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: normal;
+}

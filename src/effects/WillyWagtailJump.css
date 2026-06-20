@@ -1,0 +1,47 @@
+.wagtail-jump {
+  position: absolute;
+  top: var(--screen-bird-path-top);
+  left: 0;
+  line-height: 0;
+  opacity: 0;
+  animation: wagtail-jump-across var(--wagtail-jump-duration, 6000ms) linear
+    forwards;
+}
+
+.wagtail-jump__hop {
+  animation: wagtail-hop var(--wagtail-hop-duration, 400ms) ease-in-out infinite;
+}
+
+.wagtail-jump__sprite {
+  display: block;
+  transform: scaleX(-1);
+}
+
+@keyframes wagtail-hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-20 * var(--pixel-scale) * 1px));
+  }
+}
+
+@keyframes wagtail-jump-across {
+  0% {
+    transform: translateX(
+      calc(-1 * (var(--wagtail-display-width, 72px) + 12px))
+    );
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(var(--screen-width) + 12px));
+    opacity: 0;
+  }
+}

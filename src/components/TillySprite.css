@@ -1,0 +1,249 @@
+.tilly-sprite-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.tilly-sprite {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  image-rendering: pixelated;
+  transform: translateY(var(--body-offset-y, 0));
+}
+
+.tilly-sprite__head,
+.tilly-sprite__body,
+.tilly-sprite__tail,
+.tilly-sprite__ear,
+.tilly-sprite__snout,
+.tilly-sprite__legs span {
+  position: absolute;
+  background: var(--gb-dark);
+  box-shadow: inset 0 0 0 2px var(--gb-darkest);
+}
+
+.tilly-sprite__head {
+  top: 18px;
+  left: 34px;
+  width: 52px;
+  height: 44px;
+  background: var(--gb-cream);
+  box-shadow:
+    inset 0 0 0 2px var(--gb-darkest),
+    4px 4px 0 var(--gb-shadow);
+}
+
+.tilly-sprite__snout {
+  top: 28px;
+  left: 68px;
+  width: 16px;
+  height: 14px;
+  background: var(--gb-light);
+}
+
+.tilly-sprite__ears {
+  position: absolute;
+  inset: 0;
+}
+
+.tilly-sprite__ear {
+  top: 8px;
+  width: 14px;
+  height: 22px;
+  background: var(--gb-dark);
+}
+
+.tilly-sprite__ear--left {
+  left: 30px;
+  transform: rotate(-12deg) translateY(var(--ear-offset, 0));
+}
+
+.tilly-sprite__ear--right {
+  left: 72px;
+  transform: rotate(12deg);
+}
+
+.tilly-sprite__eyes {
+  position: absolute;
+  top: 30px;
+  left: 46px;
+  display: flex;
+  gap: 10px;
+}
+
+.tilly-sprite__eyes span {
+  width: 6px;
+  height: 6px;
+  background: var(--gb-darkest);
+  display: block;
+}
+
+.tilly-sprite__eyes--closed span {
+  width: 8px;
+  height: 2px;
+  margin-top: 2px;
+}
+
+.tilly-sprite__eyes--blink span:first-child {
+  height: 2px;
+  margin-top: 2px;
+}
+
+.tilly-sprite__body {
+  top: 58px;
+  left: 38px;
+  width: 44px;
+  height: 34px;
+  background: var(--gb-cream);
+  box-shadow:
+    inset 0 0 0 2px var(--gb-darkest),
+    4px 4px 0 var(--gb-shadow);
+}
+
+.tilly-sprite__tail {
+  top: 62px;
+  left: 16px;
+  width: 18px;
+  height: 10px;
+  transform-origin: right center;
+  transform: rotate(var(--tail-angle, 0));
+}
+
+.tilly-sprite__legs {
+  position: absolute;
+  inset: 0;
+}
+
+.tilly-sprite__legs span {
+  top: 88px;
+  width: 10px;
+  height: 14px;
+  background: var(--gb-dark);
+}
+
+.tilly-sprite__legs span:nth-child(1) {
+  left: 40px;
+}
+
+.tilly-sprite__legs span:nth-child(2) {
+  left: 54px;
+}
+
+.tilly-sprite__legs span:nth-child(3) {
+  left: 68px;
+}
+
+.tilly-sprite__legs span:nth-child(4) {
+  left: 82px;
+}
+
+.tilly-sprite__zzz {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--gb-dark);
+  font-size: 8px;
+  line-height: 1;
+}
+
+.tilly-sprite__name {
+  margin: 0;
+  font-size: 10px;
+  color: var(--gb-darkest);
+}
+
+.tilly-sprite__status {
+  margin: 0;
+  font-size: 8px;
+  color: var(--gb-dark);
+  text-align: center;
+  max-width: 220px;
+  line-height: 1.6;
+}
+
+/* Animation variants */
+
+.tilly-sprite--idle {
+  animation: tilly-breathe 3s steps(2, end) infinite;
+}
+
+.tilly-sprite--sitting {
+  animation: tilly-breathe 4s steps(2, end) infinite;
+}
+
+.tilly-sprite--sleeping {
+  animation: tilly-sleep 5s ease-in-out infinite;
+}
+
+.tilly-sprite--walking {
+  animation: tilly-walk 0.6s steps(2, end) infinite;
+}
+
+.tilly-sprite--tailWag .tilly-sprite__tail {
+  animation: tilly-tail 0.35s steps(2, end) infinite alternate;
+}
+
+.tilly-sprite--earTwitch .tilly-sprite__ear--left {
+  animation: tilly-ear 0.25s steps(2, end) 3;
+}
+
+.tilly-sprite--walking .tilly-sprite__legs--phase-1 span:nth-child(odd),
+.tilly-sprite--walking .tilly-sprite__legs--phase-0 span:nth-child(even) {
+  transform: translateY(-2px);
+}
+
+@keyframes tilly-breathe {
+  0%,
+  100% {
+    transform: translateY(var(--body-offset-y, 0));
+  }
+  50% {
+    transform: translateY(calc(var(--body-offset-y, 0) - 2px));
+  }
+}
+
+@keyframes tilly-sleep {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.92;
+  }
+}
+
+@keyframes tilly-walk {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes tilly-tail {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(24deg);
+  }
+}
+
+@keyframes tilly-ear {
+  0%,
+  100% {
+    transform: rotate(-12deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-18deg) translateY(-4px);
+  }
+}

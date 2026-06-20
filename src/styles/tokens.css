@@ -1,0 +1,56 @@
+:root {
+  /* Synced from PIXEL_SCALE in src/constants/pixelScale.ts on startup */
+  --pixel-scale: 1;
+
+  /* Figma screen — design units × pixel scale */
+  --screen-width: calc(393 * var(--pixel-scale) * 1px);
+  --screen-height: calc(852 * var(--pixel-scale) * 1px);
+  --screen-bg: #ffffff;
+
+  /* Typography — Dogica Pixel Bold (12px design units at scale 1) */
+  --font-pixel: 'Dogica Pixel Bold', monospace;
+  --font-size-body: calc(12 * var(--pixel-scale) * 1px);
+  --line-height-body: calc(19 * var(--pixel-scale) * 1px);
+  --text-color: #000000;
+
+  /* Layout positions from Figma (393×852 frame) */
+  --character-top: calc(431 * var(--pixel-scale) * 1px);
+  --dialogue-character-gap: calc(16 * var(--pixel-scale) * 1px);
+  --character-display-height: calc(100 * var(--pixel-scale) * 1px);
+  --screen-bird-path-top: calc(
+    var(--character-top) + var(--character-display-height) +
+      calc(4 * var(--pixel-scale) * 1px)
+  );
+  /* Medium speech bubble height (113 native ÷ 2) — celebrating dialogue */
+  --speech-bubble-height: calc(57 * var(--pixel-scale) * 1px);
+  --sun-shimmer-gap: calc(8 * var(--pixel-scale) * 1px);
+  --leaf-fall-start-above-character: calc(
+    var(--dialogue-character-gap) + var(--speech-bubble-height) +
+      calc(20 * var(--pixel-scale) * 1px)
+  );
+
+  --button-display-height: calc(38 * var(--pixel-scale) * 1px);
+  --character-to-button-gap: calc(32 * var(--pixel-scale) * 1px);
+  --button-stack-gap: calc(12 * var(--pixel-scale) * 1px);
+  --button-stack-top: calc(
+    var(--character-top) + var(--character-display-height) + var(--character-to-button-gap)
+  );
+  --frame-bottom-margin: calc(16 * var(--pixel-scale) * 1px);
+
+  /* Pixel button colours */
+  --btn-border: #1a151e;
+  --btn-green: #9bbc0f;
+  --btn-green-highlight: #c4cfa1;
+  --btn-green-shadow: #306230;
+  --btn-red: #e88787;
+  --btn-red-shadow: #8b4545;
+  --btn-purple: #c5a3d1;
+  --btn-purple-highlight: #d9bee1;
+  --btn-purple-shadow: #9e7ca8;
+  --btn-blue-pressed: #a8b8e8;
+  --btn-blue-highlight: #c8d4f4;
+  --btn-blue-shadow: #6878a8;
+
+  /* Dialogue box border colour — matches speech bubble sprite */
+  --dialogue-border: #2d2a3e;
+}

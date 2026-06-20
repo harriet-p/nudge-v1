@@ -1,0 +1,94 @@
+.settings-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: end center;
+}
+
+.settings-panel__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 25%);
+}
+
+.settings-panel__sheet {
+  position: relative;
+  width: min(100%, var(--screen-width));
+  max-height: 85vh;
+  overflow: auto;
+  padding: 24px;
+  background: var(--screen-bg);
+  border-top: 2px solid var(--dialogue-border);
+}
+
+.settings-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.settings-panel__header h2 {
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.settings-panel__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.settings-field input[type='text'],
+.settings-field input[type='number'] {
+  padding: 8px;
+  border: 2px solid var(--dialogue-border);
+  background: var(--screen-bg);
+  color: var(--text-color);
+  font: inherit;
+}
+
+.settings-field--toggle {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-field--toggle input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+}
+
+.settings-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.settings-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.settings-panel__note {
+  margin: 8px 0 0;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.settings-panel__close {
+  flex-shrink: 0;
+}

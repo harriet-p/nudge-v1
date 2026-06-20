@@ -1,0 +1,52 @@
+.zzz-drift {
+  position: relative;
+  width: calc(56 * var(--pixel-scale) * 1px);
+  height: calc(40 * var(--pixel-scale) * 1px);
+  pointer-events: none;
+}
+
+.zzz-drift__letter {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: var(--font-pixel);
+  line-height: 1;
+  color: #8aa4c8;
+  opacity: 0;
+  animation: zzz-letter-drift 2.8s ease-out infinite;
+  /* TODO: replace text letters with zzz-1/2/3.png sprite frames */
+}
+
+.zzz-drift__letter:nth-child(2) {
+  left: calc(10 * var(--pixel-scale) * 1px);
+}
+
+.zzz-drift__letter:nth-child(3) {
+  left: calc(20 * var(--pixel-scale) * 1px);
+}
+
+.zzz-drift__sprite {
+  display: block;
+  width: calc(16 * var(--pixel-scale) * 1px);
+  height: auto;
+}
+
+@keyframes zzz-letter-drift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  70% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(
+      calc(14 * var(--pixel-scale) * 1px),
+      calc(-44 * var(--pixel-scale) * 1px)
+    );
+    opacity: 0;
+  }
+}

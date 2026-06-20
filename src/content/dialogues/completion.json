@@ -1,0 +1,84 @@
+{
+  "default": [
+    "Good job!",
+    "That was nice.",
+    "Lovely.",
+    "Well done, us.",
+    "I'm glad we did that."
+  ],
+  "water": [
+    "All better.",
+    "Hydrated together.",
+    "That hit the spot.",
+    "We remembered to drink."
+  ],
+  "rest": [
+    "That was a good pause.",
+    "Rested together.",
+    "Slow feels right.",
+    "We slowed down."
+  ],
+  "outdoors": [
+    "Lovely sunshine.",
+    "That felt good.",
+    "Warm together.",
+    "The sun was worth it.",
+    "Fresh air together."
+  ],
+  "walks": [
+    "Nice walk.",
+    "Our legs thank us.",
+    "Good little wander.",
+    "That felt good.",
+    "Fresh air together."
+  ],
+  "medicine": [
+    "One thing done.",
+    "We looked after ourselves.",
+    "That's taken care of."
+  ],
+  "dinner": [
+    "Full and happy.",
+    "That was good.",
+    "Fed and cosy."
+  ],
+  "lunch": [
+    "Treat and lunch — perfect.",
+    "That hit the spot.",
+    "Fed and happy.",
+    "Good little lunch together."
+  ],
+  "bedtime": [
+    "Sleep well.",
+    "See you in the morning.",
+    "Rest now."
+  ],
+  "stretch": [
+    "That felt good.",
+    "Looser together.",
+    "Nice stretch.",
+    "My body thanks us."
+  ],
+  "evening": [
+    "I'm cosy.",
+    "Let's watch NCIS.",
+    "You can give me a massage.",
+    "Let's sit in bed and do nothing.",
+    "Let's wind down.",
+    "Let's get settled for the night.",
+    "Let's lay down and you can give me pats."
+  ],
+  "cuddles": [
+    "Better.",
+    "I feel close to you."
+  ],
+  "play": [
+    "That was fun.",
+    "I liked that.",
+    "Good play time.",
+    "Let's do that again sometime."
+  ],
+  "random_nudge_2": [
+    "hehe thanks!"
+  ]
+}

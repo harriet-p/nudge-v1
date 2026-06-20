@@ -1,0 +1,45 @@
+.character-display {
+  display: inline-block;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+/* TODO: replace CSS stubs with dedicated sprite sheets per idle mood */
+.character-display--idle-sleeping .character-display__sprite {
+  animation: idle-breathe 4s ease-in-out infinite;
+}
+
+.character-display--idle-lounging .character-display__sprite {
+  animation: idle-breathe 5s ease-in-out infinite;
+}
+
+.character-display--idle-wandering-slowly .character-display__sprite {
+  animation: idle-drift 10s ease-in-out infinite;
+}
+
+.character-display--stretch .character-display__sprite,
+.character-display--eating .character-display__sprite,
+.character-display--harness .character-display__sprite,
+.character-display--bedtime_circle .character-display__sprite {
+  animation: none;
+}
+
+@keyframes idle-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-2 * var(--pixel-scale) * 1px));
+  }
+}
+
+@keyframes idle-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(4 * var(--pixel-scale) * 1px));
+  }
+}

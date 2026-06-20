@@ -1,0 +1,25 @@
+.character-stack {
+  position: relative;
+  display: block;
+  line-height: 0;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: default;
+  font: inherit;
+  color: inherit;
+}
+
+button.character-stack {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.character-stack--pettable {
+  cursor: pointer;
+}
+
+.character-stack--pettable:focus-visible {
+  outline: calc(2 * var(--pixel-scale) * 1px) solid var(--dialogue-border);
+  outline-offset: calc(4 * var(--pixel-scale) * 1px);
+}

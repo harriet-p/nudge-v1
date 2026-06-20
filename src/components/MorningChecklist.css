@@ -1,0 +1,69 @@
+.morning-checklist {
+  list-style: none;
+  margin: 0;
+  padding: calc(8 * var(--pixel-scale) * 1px) calc(12 * var(--pixel-scale) * 1px);
+  display: flex;
+  flex-direction: column;
+  gap: calc(6 * var(--pixel-scale) * 1px);
+  border: calc(2 * var(--pixel-scale) * 1px) solid var(--dialogue-border);
+  background: #ffffff;
+  font-family: var(--font-pixel);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.morning-checklist__item {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(8 * var(--pixel-scale) * 1px);
+  color: #6a6a6a;
+}
+
+.morning-checklist__item--current {
+  color: var(--text-color);
+}
+
+.morning-checklist__item--done {
+  color: #4a4a4a;
+}
+
+.morning-checklist__box {
+  flex-shrink: 0;
+  width: calc(22 * var(--pixel-scale) * 1px);
+  height: calc(22 * var(--pixel-scale) * 1px);
+  margin-top: calc(-1 * var(--pixel-scale) * 1px);
+  border: calc(2 * var(--pixel-scale) * 1px) solid var(--dialogue-border);
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.morning-checklist__item--done .morning-checklist__box {
+  position: relative;
+}
+
+.morning-checklist__item--done .morning-checklist__box::before,
+.morning-checklist__item--done .morning-checklist__box::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(14 * var(--pixel-scale) * 1px);
+  height: calc(2 * var(--pixel-scale) * 1px);
+  background: var(--dialogue-border);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.morning-checklist__item--done .morning-checklist__box::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.morning-checklist__label {
+  flex: 1;
+}
+
+.morning-checklist__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--button-stack-gap);
+}

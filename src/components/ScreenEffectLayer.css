@@ -1,0 +1,12 @@
+.screen-effect-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.screen-effect-layer__effect {
+  position: absolute;
+  inset: 0;
+}

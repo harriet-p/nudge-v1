@@ -1,0 +1,52 @@
+.pixel-button {
+  position: relative;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  flex-shrink: 0;
+  overflow: visible;
+  line-height: 0;
+}
+
+.pixel-button__sprite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.pixel-button__sprite--active {
+  opacity: 0;
+}
+
+.pixel-button--pressed .pixel-button__sprite--rest,
+.pixel-button:active:not(:disabled) .pixel-button__sprite--rest {
+  opacity: 0;
+}
+
+.pixel-button--pressed .pixel-button__sprite--active,
+.pixel-button:active:not(:disabled) .pixel-button__sprite--active {
+  opacity: 1;
+}
+
+.pixel-button__label {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: var(--font-pixel);
+  font-size: var(--font-size-body);
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
+.pixel-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

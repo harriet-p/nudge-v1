@@ -1,0 +1,113 @@
+.play-chase {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.play-chase__toy-track,
+.play-chase__tilly-track {
+  position: absolute;
+  left: 0;
+  line-height: 0;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.play-chase__toy-track {
+  top: 0;
+  z-index: 2;
+  animation: play-chase-toy-x var(--play-chase-duration, 1900ms) linear
+    var(--play-chase-delay, 0ms) forwards;
+}
+
+.play-chase__toy-arc {
+  animation: play-chase-toy-y var(--play-chase-duration, 1900ms) linear
+    var(--play-chase-delay, 0ms) forwards;
+}
+
+.play-chase__tilly-track {
+  top: 0;
+  z-index: 1;
+  animation: play-chase-across var(--play-chase-duration, 2700ms) linear
+    var(--play-chase-delay, 0ms) forwards;
+}
+
+.play-chase__toy,
+.play-chase__tilly {
+  display: block;
+}
+
+/* Horizontal travel — constant speed like a throw. */
+@keyframes play-chase-toy-x {
+  0% {
+    transform: translateX(calc(-1 * (var(--play-chase-toy-width, 60px) + 20px)));
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(var(--screen-width) + 20px));
+    opacity: 0;
+  }
+}
+
+/* Vertical arc — parabolic path sampled at even time steps. */
+@keyframes play-chase-toy-y {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.36));
+  }
+  20% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.64));
+  }
+  30% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.84));
+  }
+  40% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.96));
+  }
+  50% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -1));
+  }
+  60% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.96));
+  }
+  70% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.84));
+  }
+  80% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.64));
+  }
+  90% {
+    transform: translateY(calc(var(--play-chase-arc-peak, 48px) * -0.36));
+  }
+  100% {
+    transform: translateY(calc(10 * var(--pixel-scale) * 1px));
+  }
+}
+
+@keyframes play-chase-across {
+  0% {
+    transform: translateX(calc(-1 * (var(--play-chase-display-width, 80px) + 20px)));
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(var(--screen-width) + 20px));
+    opacity: 0;
+  }
+}

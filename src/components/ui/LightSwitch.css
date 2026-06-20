@@ -1,0 +1,19 @@
+.light-switch {
+  position: relative;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.light-switch__sprite {
+  display: block;
+  pointer-events: none;
+  transition: transform 0.12s ease;
+}
+
+.light-switch--clicked .light-switch__sprite {
+  transform: scale(0.92);
+}

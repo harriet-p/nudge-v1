@@ -1,0 +1,20 @@
+.main-screen {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-screen:not(.main-screen--dev) {
+  align-items: center;
+  justify-content: center;
+}
+
+.main-screen__viewport {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+}

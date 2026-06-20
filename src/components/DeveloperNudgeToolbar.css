@@ -1,0 +1,93 @@
+.dev-nudge-toolbar {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding:
+    calc(env(safe-area-inset-top, 0px) + 6px)
+    12px
+    6px;
+  background: #f3efe6;
+  border-bottom: 1px dashed #b8860b;
+}
+
+.dev-nudge-toolbar__badge {
+  flex-shrink: 0;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: #6b4f10;
+  padding: 4px 5px;
+  border: 1px solid #c9a227;
+  border-radius: 2px;
+  background: #fff8e8;
+}
+
+.dev-nudge-toolbar__field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dev-nudge-toolbar__just-because {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dev-nudge-toolbar__section-label {
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  line-height: 1;
+  color: #6b4f10;
+}
+
+.dev-nudge-toolbar__chip {
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  line-height: 1.4;
+  color: #2a2a32;
+  padding: 6px 10px;
+  border: 1px solid #c9a227;
+  border-radius: 4px;
+  background: #fff8e8;
+  cursor: pointer;
+}
+
+.dev-nudge-toolbar__chip:hover,
+.dev-nudge-toolbar__chip:focus-visible {
+  border-color: #8a6914;
+  background: #fff3d6;
+  outline: none;
+}
+
+.dev-nudge-toolbar__label {
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  line-height: 1;
+  color: #6b4f10;
+}
+
+.dev-nudge-toolbar__select {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  line-height: 1.4;
+  color: #2a2a32;
+  padding: 6px 8px;
+  min-width: 160px;
+  border: 1px solid #d4cec2;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.dev-nudge-toolbar__select:hover,
+.dev-nudge-toolbar__select:focus-visible {
+  border-color: #c9a227;
+  outline: none;
+}

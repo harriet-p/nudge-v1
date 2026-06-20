@@ -1,0 +1,115 @@
+.effect-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.effect-layer__effect {
+  position: absolute;
+  pointer-events: none;
+}
+
+.effect-layer__effect--over {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.effect-layer__effect--around {
+  inset: 0;
+}
+
+.effect-layer__effect--around.effect-layer__effect--leaf-fall {
+  top: calc(-1 * var(--leaf-fall-start-above-character));
+  bottom: 0;
+  height: auto;
+}
+
+.effect-layer__effect--at-point {
+  transform: translate(-50%, -50%);
+}
+
+.effect-layer__effect--above {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+}
+
+.effect-layer__effect--above-close {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -62%);
+}
+
+.effect-layer__effect--above-right {
+  right: 0;
+  top: 0;
+  transform: translate(20%, -70%);
+}
+
+.effect-layer__sprite {
+  display: block;
+}
+
+.effect-layer__motion {
+  display: block;
+  line-height: 0;
+}
+
+.effect-layer__motion--pat-bob {
+  animation: effect-pat-bob var(--effect-duration, 2400ms) ease-in-out forwards;
+}
+
+.effect-layer__effect--above .effect-layer__motion--float-up {
+  animation: effect-float-up 2s ease-out forwards;
+}
+
+.effect-layer__motion--gentle-bob {
+  animation: effect-gentle-bob 3.2s ease-in-out infinite;
+}
+
+@keyframes effect-gentle-bob {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(
+      calc(2 * var(--pixel-scale) * 1px),
+      calc(-5 * var(--pixel-scale) * 1px)
+    );
+  }
+}
+
+@keyframes effect-pat-bob {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(calc(-6 * var(--pixel-scale) * 1px));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes effect-float-up {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(-80 * var(--pixel-scale) * 1px));
+    opacity: 0;
+  }
+}

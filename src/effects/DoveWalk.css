@@ -1,0 +1,30 @@
+.dove-walk {
+  position: absolute;
+  top: var(--screen-bird-path-top);
+  left: 0;
+  line-height: 0;
+  opacity: 0;
+  animation: dove-walk-across var(--dove-walk-duration, 6000ms) linear forwards;
+}
+
+.dove-walk__sprite {
+  display: block;
+  transform: scaleX(-1);
+}
+
+@keyframes dove-walk-across {
+  0% {
+    transform: translateX(calc(-1 * (var(--dove-display-width, 72px) + 12px)));
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(var(--screen-width) + 12px));
+    opacity: 0;
+  }
+}
